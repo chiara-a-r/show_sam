@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+<title>Staff</title>
+</head> 
+<body> 
+	<a href="/StaffDashboard">Home</a>
+	<a href="/logout">Logout</a>
+	<h1 style="text-align:center; padding-top: 100px; color: purple ">Reviewing Survey</h1>
+		<h3 style="text-align:center; padding-top: 30px; color: purple ">Optional Questions in Survey</h3>
+	   	<button type="button" name="add"</button>
+	   	{% if optionalQs%}
+			{% for question in optionalQs %}
+		   	<pre>
+				<input type="checkbox" name="basis" value="Text-based">Text-based <input type="checkbox" name="basis" value="MCQ">MCQ<br/>
+			   	{{ question }}		<button type="button" name="add">Add</button>
+			   	{{ question }}		<button type="button" name="remove">Rempve</button>
+		   	</pre>
+		   	{% endfor %}
+	   	{% endif %}
+	   
+	   <button type="button" name="Release Survey"</button>
+</body>
+</html> 
+

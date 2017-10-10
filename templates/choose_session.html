@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<body>
+    <a href="/AdminDashboard">Home</a>
+    <a href="/CreateQuestion">Add question</a>
+    <a href="/ChooseSession">Add survey</a>
+    <a href="/Metrics">Metrics</a>
+    <a href="/logout">Logout</a>
+    
+    
+    <h1> Choose Course </h1>
+    {% for c in courses %}
+    <input type="checkbox" name="course" value=c>{{ c }}
+    {% endfor %}
+    <form method="post">
+        {{ form.course_chosen }}
+    </form>
+        
+        
+    
+    {% if sessions %}
+    <h1> Choose Session </h1>
+    
+    {% for s in sessions %}
+    <input type="checkbox" name="session" value=s>{{ s }}
+    {% endfor %}
+    <form method="post">
+        {{ form.session_chosen }}
+    </form>
+    {% endif %}
+
+
+</body>
+</html>

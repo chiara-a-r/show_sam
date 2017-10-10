@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+<title>Staff</title>
+</head> 
+<body> 
+	<pre>
+	<a href="/StaffDashboard" style="text-decoration:none">Home</a>	  <a href="/logout", style="text-decoration:none">Logout</a> 
+	</pre>
+	<h1 style="text-align:center; padding-top: 100px; color: purple ">Staff Dashboard</h1>
+	<h3 style="text-align:center; padding-top: 100px; color: purple ">You are currently teaching courses:</h3>
+	{% for c in staffCourses %}
+		<h3 style="text-align:center; padding-top: 100px; color: purple "><Var>c</Var></h3>
+	{% endfor %}
+	<h1 style="text-align:center; padding-top: 100px; color: purple ">Surveys to review</h1>
+	{% if surveys_to_review %}
+		{% for s in surveys_to_review %}
+		<pre>
+			{{ s }}	<button type="button" name="review">Review</button>
+		</pre>
+		{% endfor %}
+	{% endif %}
+	
+</body>
+</html> 

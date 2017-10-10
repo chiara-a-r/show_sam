@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<style type="text/css">
+header {
+	margin: 0;
+    padding: 10px;
+    color: white;
+    font: Verdana;
+    font-size: 25px;
+    text-align: center;
+}
+
+.note {
+    background-color:#FFF;
+    margin:10px; 
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+.container { 
+    background-color:#FFF;
+    border:1px solid #ccc; 
+    margin:20px; 
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #A1CBFF;
+    width: 120px;
+    height: 50px;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+
+}
+</style>
+<meta charset= "UTF-8">
+    <meta name= "viewport" content= "width=device-width, initial scale=1"
+        <html lang="en">
+        
+        <head>
+            <title> {{name}} </title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+            <header style="background-color:#A1CBFF; color:black">
+                <h1>{{name}}</h1>
+            </header>
+            <br>
+            <div class="note">
+                Note: This survey will be closed by September 5th. Make sure you finish it before then.
+            </div>
+            
+            <div class="container">
+                {% for i in range(0,no) %}
+                <form method = "POST">
+                <label><b>{{file.readline()}}</b></label>
+                <ul>
+                <input name={{i+1}} type="radio" value="a">{{file.readline()}}<br>
+                <input name={{i+1}} type="radio" value="b">{{file.readline()}}<br>
+                <input name={{i+1}} type="radio" value="c">{{file.readline()}}<br>
+                <input name={{i+1}} type="radio" value="d">{{file.readline()}}<br>
+                </ul>
+                {% endfor %}
+                <button type="submit" value="submit_survey">Submit</button>
+                </form>
+            </div>
+        </body>
+        </html> 
+        

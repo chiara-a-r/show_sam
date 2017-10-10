@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Admin</title>
+</head> 
+<body> 
+	<pre>
+<a href="/AdminDashboard" style="text-decoration:none">Home</a>	  <a href="/CreateQuestion", style="text-decoration:none">Add question</a> 	   <a href="/ChooseSession", style="text-decoration:none">Add survey</a>	    <a href="/Metrics", style="text-decoration:none">Metrics</a>	   <a href="/logout", style="text-decoration:none">Logout</a>
+	</pre>
+	<h1 style="text-align:center; padding-top: 30px; color: purple ">Admin Dashboard</h1>
+	<h3 style="text-align:center; padding-top: 30px; color: purple ">Live Survey Forms</h3>
+	{% if live_surveys %}
+		{% for l in live_surveys %}
+		<pre>
+			{{ l }}		<button type="submit" name="close" value=l>Close</button>
+		</pre>
+		{% endfor %}
+	{% endif %}
+	<h3 style="text-align:center; padding-top: 30px; color: purple ">Survey Forms to be Reviewed</h3>
+	{% if surveys_to_review %}
+		{% for s in surveys_to_review %}
+		<pre>
+			{{ s }}
+		</pre>
+		{% endfor %}
+	{% endif %}
+	<h3 style="text-align:center; padding-top: 30px; color: purple ">Questions in the System</h3>
+	{% if questions %}
+		{% for q in questions %}
+		<pre>
+			{{ q }}     <button type="submit" name="remove" value=q>Remove</button>
+		</pre>
+		{% endfor %}
+	{% endif %}
+	<a href="/QuestionsDisplay">See all</a>
+</body>
+</html>  

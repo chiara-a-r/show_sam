@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+<title>Questions</title>
+</head> 
+<body> 
+	<a href="/AdminDashboard">Home</a>
+	<a href="/CreateQuestion">Add question</a>
+	<a href="/CreateASurvey">Add survey</a>
+	<a href="/Metrics">Metrics</a>
+	<a href="/logout">Logout</a>
+	<h1 style="text-align:center; padding-top: 30px; color: purple ">All Questions</h1>
+	<h3 style="text-align:center; padding-top: 30px; color: purple ">All Optional Questions in the System</h3>
+	{% if optionalQs %}
+		{% for question in optionalQs %}
+			<pre>
+				{{ question }}		<button type="button" name="remove">Remove</button>
+			</pre>
+		{% endfor %}
+	{% endif %}
+	<h3 style="text-align:center; padding-top: 30px; color: purple ">All Mandatory Questions in the System</h3>
+	{% if mandatoryQs %}
+		{% for question in mandatoryQs %}
+			<pre>
+				{{ question }}		<button type="button" name="remove">Remove</button>
+			</pre>
+		{% endfor %}
+	{% endif %}
+</body>
+</html> 

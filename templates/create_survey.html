@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<body>
+    <a href="/AdminDashboard">Home</a>
+    <a href="/CreateQuestion">Add question</a>
+    <a href="/ChooseSession">Add survey</a>
+    <a href="/Metrics">Metrics</a>
+    <a href="/logout">Logout</a>
+    
+    <h1> Choose Questions </h1>
+    
+    <h3> Please select the mandatory questions </h3>
+    {% for q in man_questions %}
+    <input type="checkbox" name="question" value=q>{{ q }}
+    {% endfor %}
+    <button type="create" name="create_survey">Create survey</button>
+    {% if finished == 1 %}
+    <h3> You have successfully created a survey </h3>
+    {% endif %}
+</body>
+</html>
